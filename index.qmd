@@ -1,9 +1,10 @@
 ---
-title: "FIN7028: Asset returns"
-author: "Barry Quinn"
-date: "`r Sys.Date()`"
+title: "Asset Returns"
+subtitle: "Transforming Prices to Returns in Financial Econometricss"
+author: "Barry Quinn <br> and <br> <span class='glowinline'>Digital Dave</span>"
 css: mycssblend.css
 logo: img/qbslogo.png
+footer: "Advanced Financial Data Analytics"
 format: 
   revealjs:
     slide-number: c/t
@@ -13,16 +14,31 @@ format:
 load("fin7028_dat.RData")
 ```
 
-
-## Asset returns
-
-:::{.discussion}
-- The most important financial time series are asset prices, exchange rates and interest rates.
-- Most financial studies involve returns rather than prices.
-- Campbell et al. (1997) gives two main reasons for using returns:
-1. For an average investor, returns of an asset is a complete and scale-free summary of the investment opportunity.
-2. Return series are easier to handle than price series because the former have more attractive statistical properties.
+## Introduction
+::: {.discussion}
+In financial econometrics, analyzing returns rather than prices is driven by both theoretical and practical considerations. This approach aligns with key econometric models and economic theories, focusing on the stationary nature of returns, the mitigation of spurious regression problems, and the alignment with concepts of risk and reward.
 :::
+
+## Theoretical Reasons
+
+1. **Stationarity**: Returns are more likely to be stationary compared to prices, making them suitable for statistical and econometric models.
+2. **Non-Stationary Data Issues**: Returns reduce the risk of spurious regression problems by exhibiting weaker forms of non-stationarity.
+3. **Economic Theory Alignment**: Analyzing returns aligns with financial economics theories focusing on risk and reward.
+4. **Volatility Modeling**: Returns are essential for modeling financial market volatility, facilitating the use of models like GARCH.
+
+## Transaction Costs
+
+1. **Round Trip Transaction Costs**: These include all costs incurred in an investment cycle, affecting the net return on investments.
+2. **Impact on Returns Analysis**: Analyzing returns rather than prices accounts for the effect of transaction costs on investment returns.
+3. **Modeling and Risk Assessment**: Transaction costs are crucial for realistic econometric modeling of risk and return.
+4. **Behavioral Implications**: Transaction costs influence trading frequency and market liquidity and volatility.
+
+## Practical Reasons
+
+1. **Comparability**: Returns allow for meaningful performance comparisons across different assets.
+2. **Simplicity in Modeling**: Focusing on returns simplifies the complexity involved in modeling non-stationary price series.
+3. **Risk Management**: Analyzing returns directly supports financial risk management strategies.
+4. **Efficient Market Considerations**: Returns reflect new information in efficient markets, making them a focal point over price levels.
 
 ## One-period simple returns 
 
@@ -295,15 +311,4 @@ $$
 * It measures the US stock market's expectation of 30-day volatility *implied* by averaging prices of S&P 500 index puts and calls over a wide range of strike prices.
 * It is often regarded as the market fear factor, and can openly be traded using VIX futures and options.
 :::
-
-
-# The statistical forecasting perspective
-
-- Thing to be forecast: a random variable, $y_t$.
-- Forecast distributin: If ${\cal I}$ is all observations, then $y_{t} |{\cal I}$ means `the random variable $y_{t}$ given what we know in ${\cal I}$`
-- The point forecast: is the mean (or median) of $y_{t} |{\cal I}$
-- The Forecast variance: is $\text{var}[y_{t} |{\cal I}]$
-- A prediction interval or interval forecast is a range of values of $y_t$ with high probability.
-- With time series, ${y}_{t|t-1} = y_t | \{y_1,y_2,\dots,y_{t-1}\}$.
-- $\hat{y}_{T+h|T} =\text{E}[y_{T+h} | y_1,\dots,y_T]$ (a $h$-step forecast taking account of all observations up to time $T$).
 

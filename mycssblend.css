@@ -53,6 +53,46 @@
   color: var(--color-heat);
 }
 
+/* Base discussion container */
+.discussion {
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Style for each message in the discussion */
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Different background for questions and answers */
+.question {
+  background-color: #e7f5ff;
+  border: 1px solid #d0e2ff;
+}
+
+.answer {
+  background-color: #fff4e5;
+  border: 1px solid #ffecd8;
+}
+
+/* Speaker label */
+.speaker {
+  font-weight: bold;
+  display: block;
+}
+
+/* Timestamp for messages */
+.timestamp {
+  font-size: 0.85em;
+  color: #666;
+  float: right;
+}
+
 
 /* highlighted code */
 
