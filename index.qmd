@@ -8,6 +8,7 @@ footer: "Advanced Financial Data Analytics"
 format: 
   revealjs:
     slide-number: c/t
+    scrollable: true
 ---
 
 ```{r}
